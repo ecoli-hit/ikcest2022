@@ -1,0 +1,27 @@
+1.数据集
+fr_zh.train	法文-中文训练集
+ru_zh.train 俄文-中文训练集
+th_zh.train 泰文-中文训练集
+zh_fr.train 中文-法文训练集
+zh_ru.train 中文-俄文训练集
+zh_th.train 中文-泰文训练集
+fr_zh.test 法文-中文测试集
+ru_zh.test 俄文-中文测试集
+th_zh.test 泰文-中文测试集
+zh_fr.test 中文-法文测试集
+zh_ru.test 中文-俄文测试集
+zh_th.test 中文-泰文测试集
+
+2.读数脚本
+获取PaddleNLP源码后，将PaddleNLP/examples/machine_translation/transformer/reader.py，替换为本项目中的reader.py。
+
+3.bleu值计算工具
+unzip evaluation.zip && cd evaluation
+python3 -m pip install pythainlp
+python3 bleu_scorer.py route trans_file ref_file
+route: 翻译方向，从{“fr_zh”, “ru_zh”, “th_zh”, “zh_fr”, “zh_fr”, “zh_th”}中选择；
+trans_file: 模型翻译结果文件；
+ref_file: 真实译文文件；
+
+
+
